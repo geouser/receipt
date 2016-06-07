@@ -42,6 +42,9 @@ h1 {
 h2 {
     font: 30px $mc;
 }
+section {
+    padding: 70px 60px;
+}
 
 /*=====================================================================================*/
 /*  HEADER STYLES  */ 
@@ -271,41 +274,13 @@ nav {
 }
 
 
-/*=====================================================================================*/
-/*  STYLES  */ 
-
-
-.infoBlocks {
-    @include flex($alignI: top, $justify: center, $wrap: wrap);
-      
-    .infoBlock  {
-        margin-bottom: 20px;
-        padding: 0 20px;
-        text-align: center;
-        border: 1px solid peru;
-        &_icon {
-            width: 150px;
-            height: 150px;
-            text-align: center;
-            margin: 10px auto 15px;
-            }
-        }
-
-    &.--two  .infoBlock   {    width: 50%;}
-    &.--four .infoBlock   {    width: 25%;}
-    &.--three .infoBlock  {    width: 33%;}
-}
-
-
-
-
 
 /*=====================================================================================*/
 /*  BIg BG STYLES  */ 
 
 .bigBg {
     background-color: #000;
-    
+    padding-bottom: 60px;
     /*.................media.............*/
     @media (min-width: 1200px) {
         background-image: url("../images/bigBgLeft.jpg"),url("../images/bigBgRight.jpg");
@@ -346,6 +321,7 @@ nav {
 
 /* ------------------------------------ */
 /*  РЕЦЕПТ БЛЮДА  */
+
 .uniqueRecipes__big {
     padding: 55px 0 360px;
     background-repeat: no-repeat;
@@ -367,6 +343,152 @@ nav {
         }
         p {
             font: 18px/25px $mcl;
+        }
+    }
+}
+
+
+/* ------------------------------------ */
+/*  ЗАИНТЕРЕСОВАЛ ПРОДУКТ?  */
+.interested {
+    font: 30px $mcm;
+    margin-bottom: 25px;
+    display: block;
+    text-align: center;
+    margin-top: 70px;
+    + .button {
+        display: block;
+        margin:  0 auto;
+    }
+}
+
+/* ------------------------------------ */
+/*  ИНГРЕДИЕНТЫ  */
+
+.ingredients {
+    margin-top: 45px;
+    h2 {
+        margin-bottom: 35px;
+    }
+    &__item {
+        @include flex($alignI: start);
+        margin-bottom: 24px;
+        &__img {
+            width: 160px;
+            -webkit-box-shadow: -12px 12px 20px rgba(0,0,0, .8);
+                    box-shadow: -12px 12px 20px rgba(0,0,0, .8);
+            img {
+                width: 100%;
+            }
+        }
+        &__info {
+            text-align: left;
+            padding-left: 16px;
+            h3 {
+                text-transform: uppercase;
+                font-family: $mcm;
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+            p {
+                font-family: $mcl;
+            }
+        }
+    }
+    &__about {
+        width: 49%;
+        background-color: $red;
+        padding: 0 30px 0 100px;
+        float: left;
+        height: 85px;
+        margin-top: 75px;
+        background-image: url("../images/about_1.png");
+        background-repeat: no-repeat;
+        background-position: 5% 50%;
+        -webkit-border-radius: 4px;
+                border-radius: 4px;
+        &:before {
+            display: inline-block;
+            height: 100%;
+            content: "";
+            vertical-align: middle;
+        }
+        &:nth-of-type(2n) {
+            margin-left: 2%;
+            background-image: url("../images/about_2.png");
+            background-position: 6% 50%;
+            float: right;
+        }
+        &--green {
+            background-color: $green;
+        }
+        p {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            font: 14px $mc;
+            max-width: 98%;
+        }
+        + br {
+            clear: both;
+        }
+    }
+}
+
+
+
+
+/*=====================================================================================*/
+/*  ПРОЦЕСС ПРОИЗВОДСТВА  */ 
+
+.processSection {
+    background-image: url("../images/process_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.process {  
+    @include flex($justify: center, $wrap: wrap, $alignI: top);
+    margin-top: 60px;
+    &__item {
+        width: 180px;
+        margin: 0 27px 40px;
+        counter-increment: list;
+        position: relative;
+        &__img {
+            width: 180px;
+            height: 180px;
+            border: 3px solid #fff;
+            padding: 10px;
+            margin-bottom: 25px;
+            -webkit-border-radius: 50%;
+                    border-radius: 50%;
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                -webkit-border-radius: 50%;
+                        border-radius: 50%;
+            }
+        }
+        p {
+            font: 16px $mc;
+            text-align: center;
+            width: 120%;
+            margin-left: -10%;
+        }
+        &:after {
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 16px;
+            content: counter(list);
+            width: 50px;
+            height: 50px;
+            font: 25px/50px $mcb;
+            background-color: $red;
+            -webkit-border-radius: 50%;
+                    border-radius: 50%;
         }
     }
 }
