@@ -85,6 +85,20 @@ header {
 }
 
 
+.tel {
+    font: 35px $mcl;
+    span {
+        font-family: $mcm;
+        color: $red;
+    }
+}
+.mail {
+    font: 16px $mcm;
+    color: $red;
+    text-transform: none !important;
+}
+
+
 /* ------------------------------------ */
 /*  LOGO STYLES  */
 
@@ -217,12 +231,14 @@ nav {
     position: relative;
     background-color: #000;
     
+    /*.................media.............*/
     @include m1600 {
         background-size: 120% auto;
     }
     @include m1300 {
         background-size: cover;
     }
+    /*..............end.media.............*/
 
     .offerInfo {
         @include flex($alignI: center, $justify: space-around, $direction: column);
@@ -238,6 +254,9 @@ nav {
             + span {
                 margin-top: 20px;
             }
+        }
+        .button {
+            margin: 30px auto 50px;
         }
     }
 
@@ -281,5 +300,73 @@ nav {
 
 
 
+/*=====================================================================================*/
+/*  BIg BG STYLES  */ 
+
+.bigBg {
+    background-color: #000;
+    
+    /*.................media.............*/
+    @media (min-width: 1200px) {
+        background-image: url("../images/bigBgLeft.jpg"),url("../images/bigBgRight.jpg");
+        background-repeat: repeat-y, repeat-y;
+        background-position: left top, right top;
+        @include m1600 {
+        background-size: 20%;
+        }
+        @include m1300 {
+            background-size: 20%;
+        }
+    }
+    /*..............end.media.............*/
+
+    .wrapper:nth-of-type(1) {
+        padding-top: 60px;
+    }
+}
 
 
+
+/* ------------------------------------ */
+/*  УНИКАЛЬНЫЕ  */
+.uniqueRecipes {
+    .row {
+        @include flex($alignI: top, $justify: center);
+        &:nth-of-type(2) {margin-top: -70px;}
+        img {
+            @include m1600 {
+                width: 300px;
+                height: 370px;
+            }
+        }
+    }
+}
+
+
+
+/* ------------------------------------ */
+/*  РЕЦЕПТ БЛЮДА  */
+.uniqueRecipes__big {
+    padding: 55px 0 360px;
+    background-repeat: no-repeat;
+    background-position: 0 0, 100% 100%;
+    text-align: right;
+    &__info {
+        width: 470px;
+        display: inline-block;
+        text-align: center;
+        h3 {
+            font: 30px $mcm;
+            &:after {
+                display: block;
+                content: "";
+                margin: 20px auto;
+                border-top: 3px solid #fff;
+                width: 50px;
+            }
+        }
+        p {
+            font: 18px/25px $mcl;
+        }
+    }
+}
