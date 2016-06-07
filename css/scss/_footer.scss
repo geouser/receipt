@@ -1,0 +1,59 @@
+.footer {
+	background-color: #000;
+	color: #fff;
+
+	.wrapper {
+		padding: 20px 0;
+	}
+
+	.col {
+		display: inline-block;
+		vertical-align: middle;
+		width: 50%;
+		margin: 0 -2px;
+
+		&.moto {
+			text-align: left;
+
+			p {
+				display: inline-block;
+				text-align: center;
+				font-family: $mcb;
+				font-size: 25px;
+				text-transform: uppercase;
+			}
+		}
+
+		&.c-info {
+			text-align: right;
+
+			.phone {
+				font-size: 35px;
+			}
+
+			.mail {
+				color: $red;
+				font-family: $mcm;
+				font-size: 16px;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.company {
+		background-color: #121212;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 15px 0;
+		color: #949494;
+	}
+}
+
+.phone {
+	font-family: $mcl;
+
+	span {
+		color: $red;
+		font-family: $mcm;
+	}
+}
