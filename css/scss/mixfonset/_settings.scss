@@ -4,20 +4,24 @@
 
 // FONTS
 // ---------------------------
-
+$mcl:			'museo_cyrillic300';
+$mc:			'museo_cyrillic500';
+$mcm:			'museo_cyrillic700';
+$mcb:			'museo_cyrillic900';
 
 
 // RESPONSIVE
 // ---------------------------
-
+$tablets:		'max-width: 1000px';
+$phones:		'max-width: 750px';
 
 
 // TYPOGRAPHIC
 // ---------------------------
 html, body                    	{   height: 100%;}
+body 							{	font-family: $mc; color: #fff;}
 p                             	{   }
-h1, h2, h3, h4, h5, p         	{   }
-.white                          {	color: #FFF;}
+h1, h2, h3, h4, h5 	         	{   font-weight: normal;}
 
 
 
@@ -25,10 +29,16 @@ h1, h2, h3, h4, h5, p         	{   }
 // lAYOUT
 // ---------------------------
 
-.wrapper                      	{   width: 1200px;
-								   	margin: 0 auto;
-                                   	text-align: center;
-                              	}
+.wrapper {
+	width: 980px;
+	margin: 0 auto;
+	text-align: center;
+
+	&--wide {
+		width: 1200px;
+	}
+}
+                              	
 header 							{}
 aside 							{}
 main 							{}
