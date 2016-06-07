@@ -40,7 +40,7 @@ header {
     @include position(absolute, 0, auto, auto, 0);
     width: 100%;
     z-index: 100;
-    background: #fff;
+    background: transparent;
     margin: 0;
     @include transition(all, .4s);
     
@@ -62,27 +62,11 @@ header {
             }
         }
         /*.............end media..............*/
-
-
-    .header__top {
-        padding: 7px 0;
-        color: #FFF;
+        
+    .header__info {
+        padding: 35px 0;
         .wrapper {
-            @include flex();
-        }
-        .divide {
-            height: 35px;
-            width: 1px;
-            vertical-align: middle;
-            background-color: #1E5D75;
-        }
-    }
-    
-    .header__bottom {
-        padding: 30px 0;
-        background-color: #fff;
-        .wrapper {
-            @include flex();
+            @include flex();   
         }
     }
 }
@@ -122,31 +106,41 @@ header {
 
 /* ------------------------------------ */
 /*  NAV STYLES  */
-
-nav ul {
-    @include flex();
-    list-style-type: none;
-    a {
-        display: inline-block;
-        margin: 0 20px;
-        text-decoration: none;
-        @include transition(all, .2s);             
-        &:hover {}
-    }
-
-        /*.................media.............*/
-        @include m800 { 
-            display: block;
+nav {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    ul {
+        @include flex();
+        list-style-type: none;
+        li {
             height: 100%;
-            overflow: scroll;
-            position: relative;
-            li a  {   
-                margin: 0 0 25px 0;
-                &.active {color: #ECCC1D;}
-                &:hover  {background: transparent;}
-            } 
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: #FFF;
+                height: 100%;
+                line-height: 50px;
+                text-transform: uppercase;
+                padding: 0 4px;
+                @include transition(all, .2s);             
+                &:hover {background-color: rgba(255, 255, 255, .1);}
+            }
         }
-        /*.............end media.............*/
+
+            /*.................media.............*/
+            @include m800 { 
+                display: block;
+                height: 100%;
+                overflow: scroll;
+                position: relative;
+                li a  {   
+                    margin: 0 0 25px 0;
+                    &.active {color: #ECCC1D;}
+                    &:hover  {background: transparent;}
+                } 
+            }
+            /*.............end media.............*/
+    }
 }
 
 
@@ -203,17 +197,13 @@ nav ul {
 
 
 .offer {
-    height: 100%;
-    min-height: 650px;
-    max-height: 900px;
-    background: url('../images/law.jpg') no-repeat center center;
+    height: 1100px;
+    background: url('../images/offer.jpg') no-repeat center top;
     background-size: cover;
-    padding: 200px 0 0 0;
+    padding: 160px 0 0 0;
     position: relative;
 
-
     .offerInfo {
-        height: 100%;
         @include flex($alignI: center, $justify: space-around, $direction: column);
         z-index: 2;
         position: relative;
