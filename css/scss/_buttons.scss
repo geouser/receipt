@@ -18,4 +18,8 @@
 	&:hover {
 		background-color: #d8171a;
 	}
+
+	@media (max-width: 500px) {
+		width: 100%;
+	}
 }

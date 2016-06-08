@@ -3,7 +3,8 @@
 	color: #fff;
 
 	.wrapper {
-		padding: 20px 0;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 
 	.col {
@@ -12,8 +13,17 @@
 		width: 50%;
 		margin: 0 -2px;
 
+		@media ($phones) {
+			width: 100%;
+			margin: 15px 0;
+		}
+
 		&.moto {
 			text-align: left;
+
+			@media ($phones) {
+				text-align: center;
+			}
 
 			p {
 				display: inline-block;
@@ -27,8 +37,16 @@
 		&.c-info {
 			text-align: right;
 
+			@media ($phones) {
+				text-align: center;
+			}
+
 			.phone {
 				font-size: 35px;
+
+				@media ($phones) {
+					font-size: 30px;
+				}
 			}
 
 			.mail {

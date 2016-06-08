@@ -8,15 +8,19 @@
 	.title {
 		font-size: 26px;
 		color: #fff;
+
+		@media ($phones) {
+			br {
+				display: none;
+			}
+
+			text-shadow: 0px 0px 3px #000;
+		}
 	}
 
 	&__box {
 		width: 692px;
 		height: 447px;
-		background-image: url(../images/rounded.png);
-		background-position: 50% 50%;
-		background-repeat: no-repeat;
-		background-size: cover;
 		margin: 0 auto;
 		position: relative;
 		font-size: 18px;
@@ -24,6 +28,34 @@
 		padding: 53px 0 0;
 		margin-top: 32px;
 		margin-bottom: 60px;
+
+		@media (min-width: 751px) {
+			background-image: url(../images/rounded.png);
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		@media ($phones) {
+			background-color: #fff;
+			border-radius: 0px 0px 50% 50% / 0px 0px 60px 60px;
+			width: 500px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-bottom: 120px;
+			height: auto;
+			-webkit-filter: drop-shadow(0px 9px 27px rgba(0, 0, 0, 0.23));
+			filter: drop-shadow(0px 9px 27px rgba(0, 0, 0, 0.23));
+			margin-bottom: 90px;
+
+			@media (max-width: 550px) {
+				width: 100%;
+			}
+
+			br {
+				display: none;
+			}
+		}
 
 		p {
 			line-height: 25px;
@@ -48,6 +80,16 @@
 			left: 50%;
 			margin-left: -90px;
 			@extend %vertAlign;
+			-webkit-filter: drop-shadow(0px 9px 27px rgba(0, 0, 0, 0.23));
+			filter: drop-shadow(0px 9px 27px rgba(0, 0, 0, 0.23));
+
+			@media ($phones) {
+				bottom: -75px;
+
+				br {
+					display: inline;
+				}
+			}
 
 			p {
 				display: inline-block;

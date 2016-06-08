@@ -1,13 +1,29 @@
 .quality {
-	background-image: url(../images/quality.jpg);
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: cover;
+	
 	padding-top: 60px;
+
+	@media (min-width: 1001px) {
+		background-image: url(../images/quality.jpg);
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+	}
+
+	@media ($tablets) {
+		& {
+			background-image: url(../images/quality_mini.jpg);
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: cover;
+		}
+	}
 
 	h2 {
 		font-family: $mcm;
-		font-size: 35px;
+
+		@media (max-width: 500px) {
+			text-transform: uppercase;
+		}
 	}
 
 	ul {
@@ -15,6 +31,18 @@
 		padding-left: 200px;
 		margin-top: 70px;
 		counter-reset: count;
+
+		@media ($tablets) {
+			padding-left: 0;
+			width: 80%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
 
 		li {
 			padding-left: 80px;
@@ -26,12 +54,26 @@
 			counter-increment: count;
 			font-size: 18px;
 
+			@media ($phones) {
+				height: auto;
+				margin: 35px 0;
+				padding-left: 50px;
+			}
+
+
+
 			&:nth-child(2),
 			&:nth-child(4) {
 				margin-left: 25px;
+				@media ($tablets) {
+					margin-left: 0;
+				}
 			}
 			&:nth-child(3) {
 				margin-left: 42px;
+				@media ($tablets) {
+					margin-left: 0;
+				}
 			}
 
 			&:after {
@@ -49,6 +91,13 @@
 				background-color: #fff;
 				color: #000;
 				position: absolute;
+
+				@media (max-width: 500px) {
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					margin-top: -20px;
+				}
 			}
 
 			span {
