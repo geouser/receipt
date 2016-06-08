@@ -15,13 +15,11 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     $(function() { 
         var $document = $(document),
-            $element = $('.menu-button'),
-            $element2 = $('header'),
+            $element = $('nav'),
             className = 'hasScrolled';
 
         $document.scroll(function() {
-            $element.toggleClass(className, $document.scrollTop() >= 1);
-            $element2.toggleClass(className, $document.scrollTop() >= 1);
+            $element.toggleClass(className, $document.scrollTop() >= 128);
         });
     });
       
@@ -40,7 +38,39 @@ jQuery(document).ready(function($) {
             }
     });
 
+    $('nav a').click(function() {
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 800);
 
+      $('.menu-button').removeClass('active');
+      $('header').removeClass('active');
+      if ($('header').hasClass('active')) {
+          $('body').css('overflow', 'hidden');
+        } else {
+          $('body').css('overflow', 'visible');
+        }
+        return false;
+    });
+
+
+      var $sections = $('section');
+      $(window).scroll(function(){
+        var currentScroll = $(this).scrollTop();
+        var $currentSection;
+        var windowHalf = $(window).height() / 1.5;
+        
+        $sections.each(function(){
+          var divPosition = $(this).offset().top - windowHalf;
+          
+          if( divPosition - 1 < currentScroll ){
+            $currentSection = $(this);
+          }
+        var id = $currentSection.attr('id');
+          $('a').removeClass('active');
+          $("[href=#"+id+"]").addClass('active');
+        })
+      });
 
     /*---------------------------
                                   Magnific popup
