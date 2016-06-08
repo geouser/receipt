@@ -108,40 +108,79 @@
                         <img src="images/unique_5.png" alt="">
                     </div>
 
-                    <div class="uniqueRecipes__big" style="background-image: url('images/rec_1_1.png'), url('images/rec_1_2.png')">
-                        <div class="uniqueRecipes__big__info">
-                            <h3>ГОВЯДИНА ТУШЕНАЯ С ПРОТЕРТЫМИ ТОМАТАМИ</h3>
-                            <p>Тающая во рту тушеная в красном вине говядина с протертыми свежими томатами и пряными прованскими травами</p>
-                        </div>
-                    </div><!-- end uniqueRecipes__big --> 
+                    <div>
+                        <div class="uniqueRecipes__big">
+                            <div class="uniqueRecipes__big__info">
+                                <h3>ГОВЯДИНА ТУШЕНАЯ С ПРОТЕРТЫМИ ТОМАТАМИ</h3>
+                                <p>Тающая во рту тушеная в красном вине говядина с протертыми свежими томатами и пряными прованскими травами</p>
+                            </div>
+                        </div><!-- end uniqueRecipes__big --> 
 
-                    <div class="uniqueRecipes__big" style="background-image: url('images/rec_2_1.png'), url('images/rec_2_2.png')">
-                        <div class="uniqueRecipes__big__info">
-                            <h3>ГОВЯДИНА ТУШЕНАЯ С БЕЛЫМИ ГРИБАМИ</h3>
-                            <p>Изысканное сочетание говядины и благородных белых грибов тушеных в белом вине с добавлением сливок для предания блюду нежного вкуса</p>
-                        </div>
-                    </div><!-- end uniqueRecipes__big --> 
+                        <div class="uniqueRecipes__big">
+                            <div class="uniqueRecipes__big__info">
+                                <h3>ГОВЯДИНА ТУШЕНАЯ С БЕЛЫМИ ГРИБАМИ</h3>
+                                <p>Изысканное сочетание говядины и благородных белых грибов тушеных в белом вине с добавлением сливок для предания блюду нежного вкуса</p>
+                            </div>
+                        </div><!-- end uniqueRecipes__big --> 
 
-                    <div class="uniqueRecipes__big" style="background-image: url('images/rec_3_1.png'), url('images/rec_3_2.png')">
-                        <div class="uniqueRecipes__big__info">
-                            <h3>ГОВЯДИНА ТУШЕНАЯ В СОБСТВЕННОМ СОКУ</h3>
-                            <p>Ароматная, нарезанная кусочками говядина, томленая в собственном соку с веточкой тимьяна по старому сербскому рецепту.</p>
-                        </div>
-                    </div><!-- end uniqueRecipes__big --> 
+                        <div class="uniqueRecipes__big">
+                            <div class="uniqueRecipes__big__info">
+                                <h3>ГОВЯДИНА ТУШЕНАЯ В СОБСТВЕННОМ СОКУ</h3>
+                                <p>Ароматная, нарезанная кусочками говядина, томленая в собственном соку с веточкой тимьяна по старому сербскому рецепту.</p>
+                            </div>
+                        </div><!-- end uniqueRecipes__big --> 
 
-                    <div class="uniqueRecipes__big" style="background-image: url('images/rec_4_1.png'), url('images/rec_4_2.png')">
-                        <div class="uniqueRecipes__big__info">
-                            <h3>СВИНИНА ТУШЕНАЯ В СОБСТВЕННОМ СОКУ</h3>
-                            <p>Нежная мягкая свинина томленная с луком и черным перцем в собственном соку по старому русскому рецепту</p>
-                        </div>
-                    </div><!-- end uniqueRecipes__big --> 
+                        <div class="uniqueRecipes__big">
+                            <div class="uniqueRecipes__big__info">
+                                <h3>СВИНИНА ТУШЕНАЯ В СОБСТВЕННОМ СОКУ</h3>
+                                <p>Нежная мягкая свинина томленная с луком и черным перцем в собственном соку по старому русскому рецепту</p>
+                            </div>
+                        </div><!-- end uniqueRecipes__big --> 
 
-                    <div class="uniqueRecipes__big" style="background-image: url('images/rec_5_1.png'), url('images/rec_5_2.png')">
-                        <div class="uniqueRecipes__big__info">
-                            <h3>СВИНИНА ТУШЕНАЯ С КОПЧЕНЫМ БЕКОНОМ</h3>
-                            <p>Нежнейшие тушеные кусочки свинины и копченого на дубовой щепе бекона с терпким вкусом цедры лимона и пряным ароматом семян тмина.</p>
-                        </div>
-                    </div><!-- end uniqueRecipes__big --> 
+                        <div class="uniqueRecipes__big">
+                            <div class="uniqueRecipes__big__info">
+                                <h3>СВИНИНА ТУШЕНАЯ С КОПЧЕНЫМ БЕКОНОМ</h3>
+                                <p>Нежнейшие тушеные кусочки свинины и копченого на дубовой щепе бекона с терпким вкусом цедры лимона и пряным ароматом семян тмина.</p>
+                            </div>
+                        </div><!-- end uniqueRecipes__big --> 
+                    </div>
+
+                    <style> /* backgrounds for recipes */
+                        @media (min-width: 700px) {
+                            .uniqueRecipes__big:nth-of-type(1) {
+                                background-image: url("images/rec_1_1.png"), url("images/rec_1_2.png");
+                            }
+                            .uniqueRecipes__big:nth-of-type(2) {
+                               background-image: url("images/rec_2_1.png"), url("images/rec_2_2.png");
+                            }
+                            .uniqueRecipes__big:nth-of-type(3) {
+                                background-image: url("images/rec_3_1.png"), url("images/rec_3_2.png");
+                            }
+                            .uniqueRecipes__big:nth-of-type(4) {
+                                background-image: url("images/rec_4_1.png"), url("images/rec_4_2.png");
+                            }
+                            .uniqueRecipes__big:nth-of-type(5) {
+                                background-image: url("images/rec_5_1.png"), url("images/rec_5_2.png");
+                            }
+                        }
+                        @media (max-width: 700px) {
+                            .uniqueRecipes__big:nth-of-type(1) {
+                                background-image: url("images/rec_1_1_m.png"), url("images/rec_1_2_m.png");
+                            }
+                            .uniqueRecipes__big:nth-of-type(2) {
+                               background-image: url("images/rec_2_1_m.png"), url("images/rec_2_2_m.png");
+                            }
+                            .uniqueRecipes__big:nth-of-type(3) {
+                                background-image: url("images/rec_3_1.png"), url("images/rec_3_2_m.png");
+                            }
+                            .uniqueRecipes__big:nth-of-type(4) {
+                                background-image: url("images/rec_4_1_m.png"), url("images/rec_4_2_m.png");
+                            }
+                            .uniqueRecipes__big:nth-of-type(5) {
+                                background-image: url("images/rec_5_1_m.png"), url("images/rec_5_2_m.png");
+                            }
+                        }
+                    </style>
 
                     <span class="interested">
                         Заинтересовал продукт? Кликайте кнопку!

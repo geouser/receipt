@@ -38,47 +38,70 @@ h1 {
     + span {
         font: 30px $mcl;
     }
-
-    /*.................media.............*/
-    @include m1300 {
-        font-size: 46px;
-        + span {
-            font-size: 24px;
-        }
-    }
-    @include m1000 {
-        font-size: 42px;
-        + span {
-            font-size: 20px;
-        }
-    }
-    @include m800 {
-        font-size: 36px;
-    }
-    @include m600 {
-        font-size: 32px;
-    }
-    @include m500 {
-        font-size: 28px;
-        + span {
-            font-size: 18px;
-        }
-    }
-    @include m500 {
-        font-size: 24px;
-        + span {
-            font-size: 16px;
-        }
-    }
-    /*..............end.media.............*/
 }
 h2 {
     font: 30px $mc;
 }
 section {
-    padding: 70px 60px;
+    padding: 70px 0 60px;
 }
 
+/*.................media.............*/
+    @include m1300 {
+        h1 {
+            font-size: 46px;
+            + span {
+                font-size: 24px;
+            }
+        }
+        h2 {
+            font-size: 28px;
+        }
+    }
+    @include m1000 {
+        h1 {
+            font-size: 42px;
+            + span {
+                font-size: 20px;
+            }
+        }
+    }
+    @include m800 {
+        h1 {
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 26px;
+        }
+    }
+    @include m600 {
+        h1 {
+            font-size: 32px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+    }
+    @include m500 {
+        h1 {
+            font-size: 28px;
+            + span {
+                font-size: 18px;
+            }
+        }
+    }
+    @include m500 {
+        h1 {
+            font-size: 24px;
+            + span {
+                font-size: 16px;
+            }
+        }
+        h2 {
+            font-size: 20px;
+        }
+    }
+    /*..............end.media.............*/
 
 
 /*=====================================================================================*/
@@ -285,14 +308,18 @@ nav {
 
 
 .offer {
-    min-height: 1020px;
-    background: url('../images/offer.jpg') no-repeat center top;
     background-size: 100% auto;
     padding: 175px 0 0 0;
     position: relative;
     background-color: #000;
     
     /*.................media.............*/
+    @media (min-width: 850px) {
+        background: #000 url('../images/offer.jpg') no-repeat center top;
+    }
+    @media (max-width: 850px) {
+        background: #000 url('../images/offer_m.jpg') no-repeat center top;
+    }
     @include m1600 {
         background-size: 120% auto;
     }
@@ -339,8 +366,16 @@ nav {
     margin-top: 30px;
     @include flex($alignI: center, $justify: center, $wrap: wrap);
     img {
-        margin: 0 10px;
+        margin: 0 10px 15px;
     }
+    /*.................media.............*/
+    @include m600 {
+        margin-top: 20px;
+        img {
+            width: 200px;
+        }
+    }
+    /*..............end.media.............*/
 }
 
 
@@ -350,7 +385,6 @@ nav {
 
 .bigBg {
     background-color: #000;
-    padding-bottom: 60px;
     /*.................media.............*/
     @media (min-width: 1200px) {
         background-image: url("../images/bigBgLeft.jpg"),url("../images/bigBgRight.jpg");
@@ -376,14 +410,34 @@ nav {
 /*  УНИКАЛЬНЫЕ  */
 .uniqueRecipes {
     .row {
-        @include flex($alignI: top, $justify: center);
-        &:nth-of-type(2) {margin-top: -70px;}
+        @include flex($alignI: top, $justify: center, $wrap : wrap);
+        &:nth-of-type(2n) {margin-top: -70px;}
         img {
             @include m1600 {
                 width: 300px;
                 height: 370px;
             }
         }
+        /*.................media.............*/
+        @include m1000 {
+            img:nth-of-type(3n),
+            &:nth-of-type(2n) {
+                margin-top: -90px;
+            }
+        }
+        @include m750 {
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            img {
+                margin: -90px auto 0;
+                display: block;
+                &:nth-of-type(1) {
+                    margin-top: 0;
+                }
+            }
+        }
+        /*..............end.media.............*/
     }
 }
 
@@ -414,7 +468,36 @@ nav {
         p {
             font: 18px/25px $mcl;
         }
+
+        @include m500 {
+            width: 100%;
+            h3 {
+                font-size: 24px;
+                padding: 0 10px;
+            }
+            p {
+                font-size: 16px;
+                height: 22px;
+                padding: 0 10px;
+            }
+        }
     }
+        /*.................media.............*/
+        @include m1000 {
+            text-align: center;
+            background-size: auto 150px, auto 220px;
+            padding-bottom: 230px; padding-top: 80px;
+            h3 {
+                text-shadow: 0 0 7px #000;
+            }
+        }
+        @include m500 {
+            text-align: center;
+            background-size: auto 120px, auto 150px;
+            padding-bottom: 160px; padding-top: 60px;
+            border-bottom: 2px solid #fff;
+        }
+        /*..............end.media.............*/
 }
 
 
@@ -444,7 +527,7 @@ nav {
         margin-bottom: 35px;
     }
     &__item {
-        @include flex($alignI: start);
+        @include flex($alignI: start, $wrap: wrap);
         margin-bottom: 24px;
         &__img {
             width: 160px;
@@ -457,6 +540,7 @@ nav {
         &__info {
             text-align: left;
             padding-left: 16px;
+            width: calc(100% - 170px);
             h3 {
                 text-transform: uppercase;
                 font-family: $mcm;
@@ -467,6 +551,26 @@ nav {
                 font-family: $mcl;
             }
         }
+
+        /*.................media.............*/
+        @include m600 {
+            h3 {
+                font-size: 14px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        @include m500 {
+            &__img {
+                display: block;
+                margin: 0 auto 20px;
+            }
+            &__info {
+                width: 100%;
+            }
+        }
+        /*..............end.media.............*/
     }
     &__about {
         width: 49%;
@@ -492,6 +596,23 @@ nav {
             background-position: 6% 50%;
             float: right;
         }
+         /*.................media.............*/
+        @include m1000 {
+            padding: 0 20px 0 90px;
+        }
+        @include m750 {
+            float: none;
+            width: 100%;
+            margin: 10px auto;
+            height: auto;
+            min-height: 85px;
+            padding: 10px 20px 20px 90px;
+            &:nth-of-type(2n){
+                float: none;
+                margin: 10px auto;
+            }
+        }
+        /*..............end.media.............*/
         &--green {
             background-color: $green;
         }
